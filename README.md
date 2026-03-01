@@ -1,6 +1,6 @@
 # DevCalc API
 
-[![CI Pipeline](https://github.com/GuiC0506/infnet/actions/workflows/ci.yml/badge.svg)](https://github.com/GuiC0506/infnet/actions/workflows/ci.yml)
+[![CI Pipeline](https://github.com/guilhermec-costa/cicd_infnet/actions/workflows/ci.yml/badge.svg)](https://github.com/guilhermec-costa/cicd_infnet/actions/workflows/ci.yml)
 
 REST API com operações matemáticas simples, desenvolvida em Java com framework Javalin.
 
