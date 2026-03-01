@@ -14,23 +14,16 @@ on:
 
 jobs:
   lint:
-    if: inputs.run_lint
+    if: ${{ inputs.run_lint }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           java-version: '11'
           distribution: 'temurin'
-
-      - name: Install Maven
-        run: |
-          apt-get update
-          apt-get install -y maven
-
       - name: Run Checkstyle
         uses: dbelyaev/action-checkstyle@master
         with:
@@ -39,22 +32,15 @@ jobs:
           level: warning
 
   test:
-    if: inputs.run_tests
+    if: ${{ inputs.run_tests }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           java-version: '11'
           distribution: 'temurin'
-
-      - name: Install Maven
-        run: |
-          apt-get update
-          apt-get install -y maven
-
       - name: Run tests
         run: mvn test
