@@ -31,8 +31,8 @@ jobs:
     needs: checkout
     uses: ./.github/workflows/lint-and-test.yml
     with:
-      run_tests: ${{ github.event.inputs.run_tests || true }}
-      run_lint: ${{ github.event.inputs.run_lint || true }}
+      run_tests: ${{ fromJson(github.event.inputs.run_tests || 'true') }}
+      run_lint: ${{ fromJSON(github.event.inputs.run_lint || 'true') }}
 
   build:
     needs: checkout
